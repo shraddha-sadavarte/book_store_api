@@ -19,7 +19,7 @@ export const protect = async (req, res, next) => {
 
 //admin only
 export const adminOnly = (req, res, next) => {
-    if(req.user?.role === 'Admin') return next();
+    if(req.user?.role === 'admin') return next();
     res.status(403).json({ message: 'Access denied: admins only'});
 }
 
